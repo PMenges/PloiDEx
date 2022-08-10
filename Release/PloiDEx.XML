@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+<assembly><name>PloiDEx</name></assembly>
+<members>
+<member name="P:Fun.myParsedValues">
+<summary>
+ Call CsvTypeProvider for tab seperated values, parse Dataset
+</summary>
+</member>
+</members>
+</doc>

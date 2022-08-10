@@ -1,0 +1,81 @@
+﻿<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal">X</button>
+    <h1>How-To</h1>
+    This application provides a set of functions to access and visualize the proteome and transcriptome data of the manuscript "Scaling of cellular processes with ploidy" <br>by <span style="font-weight: bold;"> Yahya et al.</span><br /> <br /> To do so the data is visualized as grouped profile plots
+	which show fold changes of proteome data normalized to the SILAC standard and transcriptome data to a s.pombe spike. For ideal comparability the individual medians of the normalized distributions are shifted to zero (<span style="font-weight: bold;">See </span> material and methods for further information).<br /> <br />
+	The visualization is performed with <span style="font-weight: bold;">plotly.js</span>, which at any point allows a download of the plot as .png or a transfer to the plotly chart studio (Edit chart >>) to export or further customize the shown data. <br><br>
+</div>
+<div class="modal-body">
+    <div class="panel panel-default">
+        <div class="panel-heading text-left">
+            Functionality:
+        </div>
+        <div class="panel-body">
+		
+            <div class="row">
+                <div class="text-center col-xs-3"><a class="btn btn-default "> Threshold </a></div>
+                <div class="text-left col-xs-9">
+                    Enter a log 2 fold change threshold as positive or negative integer or floating point number. The dataset will be filtered for all values that show a total difference between ploidies bigger or equals (positive) or smaller or equals (negative) cutoffs.<br><br>
+                </div>
+            </div>
+			
+            <div class="row">
+                <div class="text-center col-xs-3"><a class="btn btn-default "> Smoothing </a></div>
+                <div class="text-left col-xs-9">
+                    <span style="font-weight: bold;">Optional:</span> Enter a log 2 fold change smoothing threshold as integer or floating point number in addition to the filtering threshold. All values that show a spike from one to the successive ploidy bigger or equals the (absolute) set smoothing threshold will be excluded from the filtered set.<br><br>
+                </div>
+            </div>
+			
+            <div class="row">
+                <div class="text-center col-xs-4"><a class="btn btn-default "> Biological Process </a></div>
+                <div class="text-left col-xs-8">
+                    Enter a Gene Ontology ID of a Biological Process to filter the datasets by annotation. Those can be easily searched for at SGD (linked in navbar) and copy-pasted from there. <br>Exemplarily, for mitochondrial translation paste <span style="font-weight: bold;">GO:0032543</span>, including "GO:", without whitespaces. This function can be combined with a filtering threshold.<br><br>
+				</div>
+			</div>	
+			
+            <div class="row">
+                <div class="text-center col-xs-4"><a class="btn btn-default "> Cellular Compartment </a></div>
+                <div class="text-left col-xs-8">
+                    Enter a Gene Ontology ID of a Cellular Compartment to filter the datasets by annotation. Those can be easily searched for at SGD (linked in navbar) and copy-pasted from there. <br>Exemplarily, for cytosolic large ribosomal subunit paste <span style="font-weight: bold;">GO:0022625</span>, including "GO:", without whitespaces. This function can be combined with a filtering threshold.<br><br>
+                </div>
+            </div>
+			
+            <div class="row">
+                <div class="text-center col-xs-3"><a class="btn btn-default "> Gene name </a></div>
+                <div class="text-left col-xs-9">
+                    Search for a single gene or a comma/semicolon separated list of genes. Gene names are automatically capitalized and completed, eG MCM2-7 can be plotted by searching for "mcm". For a list of all measured gene names see supplement or linked raw data.<br><br>
+                </div>
+            </div>		
+			
+            <div class="row">
+                <div class="text-center col-xs-3"><i class="fa fa-search"></i></div>
+                <div class="text-left col-xs-9">
+                    This will initialize a profile plot with the specified parameters. Plot initializations can interact with different parameter fields. Gene names can be shown with a gene ontology with lower opacity in the background or added to filtered plots.<br /> <br />
+                </div>
+            </div>
+            <div class="row">
+                <div class="text-center col-xs-3"><i class="fa fa-search-plus"></i></div>
+                <div class="text-left col-xs-9">
+                    This adds specific gene names without reducing the opacity of the existing plot.<br /><br />
+                </div>
+            </div>	
+            <div class="row">
+                <div class="text-center col-xs-3"><i class="fa fa-thermometer-full"></i></div>
+                <div class="text-left col-xs-9">
+                    This will plot the data in form of a heatmap, sorted by total descending difference between ploidies.<br /> <br />
+                </div>
+            </div>			
+            <div class="row">
+                <div class="text-center col-xs-3"><i class="fa fa-handshake-o"></i></div>
+                <div class="text-left col-xs-9">
+                     This button will calculate the average of the GO profile plots, add this median as average trace in blue, add the specified gene names in red to the plot and reduce the opacity of all shown traces based on their distance to the average.<br /> <br />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <div class="panel-footer">
+            The interactive plots are created by <a href="https://plotly.com/javascript/">plotly.js.</a>
+        </div>
+    </div>
+</div>

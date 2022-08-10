@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../PageRes/favicon.ico">
+
+    <title>-- PloiDEx --</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../PageRes/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../PageRes/ie-emulation-modes-warning.js"></script>
+
+    <!-- Custom styles for this template -->
+    <link href="../PageRes/starter-template.css" rel="stylesheet">
+
+    <script src="../PageRes/ie-emulation-modes-warning.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+   
+    <!-- Call plotly.js -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <link href="../Plot/PStyle.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+      <nav class="navbar navbar-inverse navbar-fixed-top">
+              <div class="navbar-header">
+                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"></button>
+                  <a class="navbar-brand" href="https://www.bio.uni-kl.de/en/"><span style="font-weight: bold;">Ploi</span>dy-<span style="font-weight: bold;">D</span>ependent <span style="font-weight: bold;">Ex</span>pression</a>
+              </div>
+			  <div id="navbar" class="navbar-collapse collapse">
+                  <ul class="nav navbar-nav">
+					  <li><a href="../Plot/Help.html" id="vHelp" data-toggle="modal" data-target="#vHelpModal"><span style="font-weight: bold;">How-To</span></a></li>
+                      <li><a href="https://www.yeastgenome.org/goTermFinder">SGD:Gene Ontolgy Finder</a></li>
+                      <li><a href="https://seafile.rlp.net/f/edfe8b8111474d6fb52f/?dl=1">Download Raw Data</a></li>
+                      <li><a href="https://www.bio.uni-kl.de/molekulargenetik/team/">Manuscript</a></li>
+                      <li><a href="https://www.bio.uni-kl.de/molekulargenetik/team/">Contact</a></li>
+                  </ul>
+				</div>			  		
+      </nav>
+	  
+      <div class="modal fade" id="vHelpModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+          <div class="modal-dialog">
+              <div class="modal-content">
+              </div>
+          </div>
+      </div>
+	  
+      <div id="firstProtWrapper">
+          <input type="text" class="form-control" id="first" placeholder="Threshold">
+      </div>
+      <div id="secondProtWrapper">
+          <input type="text" class="form-control" id="second" placeholder="Smoothing">
+      </div>
+      <div id="thirdProtWrapper">
+          <input type="text" class="form-control" id="third" placeholder="Gene name">
+      </div>
+      <div id="dropbutton" class="dropdown">
+          <a aria-expanded="false" aria-haspopup="true" role="button" data-toggle="dropdown" class="btn btn-default dropdown-toggle btn-block" href="#">
+              <span id="drop">Proteome</span><span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu btn-block">
+              <li><a href="#">Proteome</a></li>
+              <li><a href="#">Transcriptome</a></li>
+          </ul>
+      </div>
+
+      <div id="gobpWrapper">
+          <input type="text" class="form-control" id="gobp" placeholder="Biological Process">
+      </div>
+      <div id="goccWrapper">
+          <input type="text" class="form-control" id="gocc" placeholder="Cellular Compartment">
+      </div>
+      <button id="initLine" class="btn btn-default"><i class="fa fa-search"></i></button>
+      <button id="addLine" class="btn btn-default"><i class="fa fa-search-plus"></i></button>
+      <button id="searchGOCC" class="btn btn-default"><i class="fa fa-search"></i></button>
+      <button id="searchGOBP" class="btn btn-default"><i class="fa fa-search"></i></button>
+	  <button id="initHeat" class="btn btn-default"><i class="fa fa-thermometer-full"></i></button>
+      <button id="searchGOBPHeat" class="btn btn-default"><i class="fa fa-thermometer-full"></i></button>
+      <button id="searchGOCCHeat" class="btn btn-default"><i class="fa fa-thermometer-full"></i></button>
+      <button id="specificHeat" class="btn btn-default"><i class="fa fa-thermometer-full"></i></button>
+      <button id="mergeGo" class="btn btn-default"><i class="fa fa-handshake-o"></i></button>
+
+      <button id="initSearch" class="btn btn-default"><i class="fa fa-search"></i></button>
+
+      <div align="center" id="myDiv"><!-- Plotly chart will be drawn inside this DIV --></div>
+      <script src="../Plot/PCode.js"></script>
+
+      <!-- Bootstrap core JavaScript
+    ================================================== -->
+      <!-- Placed at the end of the document so the pages load faster -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+      <script>window.jQuery || document.write('<script src="../PageRes/assets/js/vendor/jquery.min.js"><\/script>')</script>
+      <script src="../PageRes/bootstrap.min.js"></script>
+      <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+      <script src="../PageRes/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>
